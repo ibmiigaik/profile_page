@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Логин{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <p>Информация о пользователе:
+        <ul>
+	    <li>Ник: {{ username }} </li></br>
+	    <li>Имя: {{ first_name }} </li></br>
+	    <li>Фамилия: {{ last_name }} </li></br>
+	    <li>Отчество: {{ patronymic }} </li></br>
+	    <li>Год поступления: {{ addmission_year }} </li></br>
+	    <li>Направление: {{ direction }} </li></br>
+	    <li>Номер группы: {{ group_num }} </li></br>
+	    <li>Роль: {{ user_role }} </li></br>
+        </ul>
+    </p>
+
+    {% if schedule %}
+    <div>{% include "components/schedule.html" %}</div>
+    {% endif %}
+
+{% endblock %}
